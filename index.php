@@ -40,11 +40,11 @@ curl_close($ch);
 
     <h1 >Next Marvel Movie</h1>
     <section>
-        <img src="<?= $data["poster_url"] ?>" width="300" style="border-radius:20px"  alt="<?= $data["title"] ?>" />
+        <img src="<?= $data["poster_url"] ?>" width="250" style="border-radius:20px"  alt="<?= $data["title"] ?>" />
     </section>
 
     <hgroup >
-        <h2 style="font-size: 50px">
+        <h2 style="font-size: 40px">
             <?= $data["title"] ?>
         </h2>
             <h3>
@@ -114,5 +114,7 @@ curl_close($ch);
     .next{
         color: #ffc83d;
     }
+
+    @media
 
 </style>

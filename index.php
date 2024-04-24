@@ -40,7 +40,18 @@ curl_close($ch);
 
     <h1 >Next Marvel Movie</h1>
     <section>
-        <img src="<?= $data["poster_url"] ?>" width="250" style="border-radius:20px"  alt="<?= $data["title"] ?>" />
+        <a href="data:text/calendar;charset=utf8,<?php echo rawurlencode('BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:' . $data["release_date"] . '
+DTEND:' . $data["release_date"]  . '
+SUMMARY:' . $data["title"] . '
+END:VEVENT
+END:VCALENDAR'); ?>">
+            <img src="<?= $data["poster_url"] ?>" width="250" style="border-radius:20px"  alt="<?= $data["title"] ?>" />
+        </a>
+
+
     </section>
 
     <hgroup >
@@ -132,3 +143,4 @@ curl_close($ch);
 
 
 </style>
+

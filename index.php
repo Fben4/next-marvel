@@ -47,8 +47,6 @@ curl_close($ch);
         <h2 style="font-size: 50px">
             <?= $data["title"] ?>
         </h2>
-
-        <div class="count">
             <h3>
                 Releasing on
                 <span>
@@ -58,7 +56,6 @@ curl_close($ch);
 
                 Days
             </h3>
-        </div>
 
         <p>
             Release date <?= $data["release_date"] ?>
@@ -87,6 +84,7 @@ curl_close($ch);
     display: grid;
     place-content: center;
 
+
     }
 
     h1{
@@ -94,9 +92,6 @@ curl_close($ch);
 
     }
 
-    .count{
-        padding:20px
-    }
     span{
         font-size: 40px;
         padding-left: 5px;
@@ -105,6 +100,7 @@ curl_close($ch);
     section{
         display:flex;
         justify-content: center;
+
     }
 
     hgroup{
@@ -116,7 +112,7 @@ curl_close($ch);
     }
 
     .next{
-        color: #000000;
+        color: #ffc83d;
     }
 
 </style>

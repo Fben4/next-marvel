@@ -44,7 +44,7 @@ curl_close($ch);
     </section>
 
     <hgroup >
-        <h2 style="font-size: 40px">
+        <h2 >
             <?= $data["title"] ?>
         </h2>
             <h3>
@@ -89,12 +89,25 @@ curl_close($ch);
 
     h1{
         text-align: center;
+        font-size: 2.5rem;
 
     }
 
+    h2{
+        font-size: 2rem;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
     span{
-        font-size: 40px;
+        font-size: 2.5rem;
         padding-left: 5px;
+
     }
 
     section{
@@ -103,18 +116,19 @@ curl_close($ch);
 
     }
 
+    .next{
+        color: #ffc83d;
+    }
+
+
     hgroup{
         display:flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
-    ;
+
     }
 
-    .next{
-        color: #ffc83d;
-    }
 
-    @media
 
 </style>

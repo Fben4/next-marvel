@@ -40,14 +40,7 @@ curl_close($ch);
 
     <h1 >Next Marvel Movie</h1>
     <section>
-        <a href="data:text/calendar;charset=utf8,<?php echo rawurlencode('BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:' . $data["release_date"] . '
-DTEND:' . $data["release_date"]  . '
-SUMMARY:' . $data["title"] . '
-END:VEVENT
-END:VCALENDAR'); ?>">
+        <a href="webcal://localhost/calendario.ics" download="evento.ics" onclick="return downloadManager()">
             <img src="<?= $data["poster_url"] ?>" width="250" style="border-radius:20px"  alt="<?= $data["title"] ?>" />
         </a>
 
@@ -144,3 +137,24 @@ END:VCALENDAR'); ?>">
 
 </style>
 
+<script>
+    function downloadManager() {
+        var icsContent = 'BEGIN:VCALENDAR\n' +
+            'VERSION:2.0\n' +
+            'BEGIN:VEVENT\n' +
+            'DTSTART:' + '<?php echo $data["release_date"] ?>' + '\n' +
+            'DTEND:' + '<?php echo $data["release_date"]  ?>' + '\n' +
+            'SUMMARY:' + '<?php echo $data["title"]  ?>' + '\n' +
+            'END:VEVENT\n' +
+            'END:VCALENDAR\n';
+
+        var icsBlob = new Blob([icsContent], {type: 'text/calendar'});
+        var a = document.createElement('a');
+        a.href = window.URL.createObjectURL(icsBlob);
+        a.download = 'event.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        return false;
+    }
+</script>
